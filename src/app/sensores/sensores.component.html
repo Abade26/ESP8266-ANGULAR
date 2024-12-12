@@ -1,0 +1,28 @@
+<div *ngIf="sensorData.length > 0; else loading">
+    <h2>Dados dos Sensores</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>MQ-135</th>
+          <th>MQ-7</th>
+          <th>Qualidade do Ar</th>
+          <th>Timestamp</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let sensor of sensorData">
+          <td>{{ sensor.id }}</td>
+          <td>{{ sensor.mq135 }}</td>
+          <td>{{ sensor.mq7 }}</td>
+          <td>{{ sensor.qualidade }}</td>
+          <td>{{ sensor.timestamp }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  
+  <ng-template #loading>
+    <p>Carregando dados...</p>
+  </ng-template>
+  
